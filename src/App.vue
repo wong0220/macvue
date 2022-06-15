@@ -1,6 +1,10 @@
 <template>
   테스트다
-  <input type="text" @text="setText" :value="text" />
+  <input type="text" @input="setText" :value="text" />
+  <div>
+    <div v-if="text.length > 0" style="font-size: 50px">왕 짠짠</div>
+    짠박스
+  </div>
 </template>
 
 <script setup>
@@ -10,7 +14,6 @@ const text = ref("");
 
 const setText = (e) => {
   text.value = e.target.value;
-  console.log(text.value);
 };
 </script>
 
