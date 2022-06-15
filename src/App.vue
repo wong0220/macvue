@@ -2,7 +2,7 @@
   테스트다
   <input type="text" @input="setText" :value="text" />
   <div>
-    <div v-if="text.length > 0" style="font-size: 50px">
+    <div v-if="comput" style="font-size: 50px">
       {{ Math.random() * 10 }}
     </div>
     짠박스
@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+import { computed } from "@vue/reactivity";
 import { ref } from "vue";
 
 const text = ref("");
@@ -17,6 +18,10 @@ const text = ref("");
 const setText = (e) => {
   text.value = e.target.value;
 };
+
+const comput = computed(() => {
+  return text.value.length > 0;
+});
 </script>
 
 <style>
