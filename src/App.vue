@@ -2,7 +2,9 @@
   테스트다
   <input type="text" @input="setText" :value="text" />
   <div>
-    <div v-if="text.length > 0" style="font-size: 50px">왕 짠짠</div>
+    <div v-if="text.length > 0" style="font-size: 50px">
+      {{ Math.random() * 10 }}
+    </div>
     짠박스
   </div>
 </template>
