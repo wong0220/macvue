@@ -7,6 +7,7 @@
     </div>
     짠박스
   </div>
+  {{ log }}
 </template>
 
 <script setup>
@@ -14,9 +15,11 @@ import { computed } from "@vue/reactivity";
 import { ref } from "vue";
 
 const text = ref("");
+const log = ref([]);
 
 const setText = (e) => {
   text.value = e.target.value;
+  log.value.push(e.target.value);
 };
 
 const comput = computed(() => {
