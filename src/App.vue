@@ -1,17 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  테스트다
+  <input type="text" @text="setText" :value="text" />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref } from "vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const text = ref("");
+
+const setText = (e) => {
+  text.value = e.target.value;
+  console.log(text.value);
+};
 </script>
 
 <style>
