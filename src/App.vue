@@ -1,6 +1,6 @@
 <template>
   테스트다
-  <input type="text" @input="setText" :value="text" />
+  <input type="text" @keyup="setText" :value="text" />
   <div>
     <div v-if="comput" style="font-size: 50px">
       {{ Math.random() * 10 }}
